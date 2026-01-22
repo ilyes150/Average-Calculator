@@ -1,0 +1,43 @@
+{
+  "system": "engineering",
+  "track": "common-core",
+  "year": 1,
+  "semester": 1,
+  "units": [
+    {
+      "code": "UEF 3.1",
+      "credit": 15,
+      "Coefficients": 12,
+      "subjects": [
+        { "name": "Data Structure and Algorithms 1", "coef": 5, "credit":  6, "Continuous": 0.4, "Exam": 0.6},
+        { "name": "Machine structure", "coef": 4, "credit":  5, "Continuous": 0.4, "Exam": 0.6},
+        { "name": "Introduction to Operating Systems 1", "coef": 3, "credit":  4, "Continuous": 0.6, "Exam": 0.4}
+      ]
+    },
+    {
+      "code": "UEF 3.2",
+      "credit": 9,
+      "Coefficients": 6,
+      "subjects": [
+        { "name": "Calculus 1", "coef": 3, "credit":  6, "Continuous": 0.4, "Exam": 0.6},
+        { "name": "Algebra 1", "coef": 3, "credit":  3, "Continuous": 0.4, "Exam": 0.6}
+      ]
+    },
+    {
+      "code": "UEM 3.1",
+      "credit": 3,
+      "Coefficients": 1,
+      "subjects": [
+        { "name": "Fundamental electronics", "coef": 1, "credit":  3, "Exam": 1}
+      ]
+    },
+    {
+      "code": "UET 3.1",
+      "credit": 2,
+      "Coefficients": 1,
+      "subjects": [
+        { "name": "Written expression and office automation techniques", "coef": 1, "credit":  2, "Continuous": 0.5, "Exam": 0.5}
+      ]
+    }
+  ]
+}

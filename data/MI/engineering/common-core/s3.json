@@ -1,0 +1,43 @@
+{
+  "system": "engineering",
+  "track": "common-core",
+  "year": 2,
+  "semester": 3,
+  "units": [
+    {
+      "code": "UEF 3.1",
+      "credit": 15,
+      "Coefficients": 11,
+      "subjects": [
+        { "name": "Data Structure and Algorithms 3", "coef": 4, "credit":  6, "Continuous": 0.4, "Exam": 0.6},
+        { "name": "Object-Oriented Programming 1", "coef": 4, "credit":  6, "Continuous": 0.4, "Exam": 0.6},
+        { "name": "Introduction to Information Systems", "coef": 3, "credit":  3, "Continuous": 0.4, "Exam": 0.6}
+      ]
+    },
+    {
+      "code": "UEF 3.2",
+      "credit": 9,
+      "Coefficients": 6,
+      "subjects": [
+        { "name": "Calculus 3", "coef": 3, "credit":  6, "Continuous": 0.4, "Exam": 0.6},
+        { "name": "Algebra 3", "coef": 3, "credit":  3, "Continuous": 0.4, "Exam": 0.6}
+      ]
+    },
+    {
+      "code": "UEM 3.1",
+      "credit": 4,
+      "Coefficients": 2,
+      "subjects": [
+        { "name": "Probability and Statistics 2", "coef": 2, "credit":  4, "Continuous": 0.4, "Exam": 0.6}
+      ]
+    },
+    {
+      "code": "UET 3.1",
+      "credit": 2,
+      "Coefficients": 1,
+      "subjects": [
+        { "name": "Entrepreneurship", "coef": 1, "credit":  2, "Exam": 1}
+      ]
+    }
+  ]
+}

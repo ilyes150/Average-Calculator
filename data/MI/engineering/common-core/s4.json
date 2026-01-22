@@ -1,0 +1,43 @@
+{
+  "system": "engineering",
+  "track": "common-core",
+  "year": 2,
+  "semester": 4,
+  "units": [
+    {
+      "code": "UEF 4.1",
+      "credit": 12,
+      "Coefficients": 8,
+      "subjects": [
+        { "name": "Object-Oriented Programming 2", "coef": 4, "credit": 6, "Continuous": 0.4, "Exam": 0.6},
+        { "name": "Introduction to Operating Systems 2", "coef": 4, "credit": 6, "Continuous": 0.4, "Exam": 0.6}
+      ]
+    },
+    {
+      "code": "UEF 4.2",
+      "credit": 12,
+      "Coefficients": 9,
+      "subjects": [
+        { "name": "Introduction to computer networks", "coef": 3, "credit":4, "Continuous": 0.4, "Exam": 0.6},
+        { "name": "Introduction to databases", "coef": 3, "credit":4, "Continuous": 0.4, "Exam": 0.6},
+        { "name": "Language theory", "coef": 3, "credit":4, "Continuous": 0.4, "Exam": 0.6}
+      ]
+    },
+    {
+      "code": "UEM 4.1",
+      "credit": 4,
+      "Coefficients": 2,
+      "subjects": [
+        { "name": "Graph theory", "coef": 2, "credit":4, "Continuous": 0.4, "Exam": 0.6}
+      ]
+    },
+    {
+      "code": "UET 4.1",
+      "credit": 2,
+      "Coefficients": 1,
+      "subjects": [
+        { "name": "Computer ethics", "coef": 1, "credit": 2, "Exam": 1}
+      ]
+    }
+  ]
+}

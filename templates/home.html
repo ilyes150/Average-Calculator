@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>CS Average Calculator</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <h1>CS Average Calculator</h1>
+        <h2>Select your field:</h2>
+        <ul id="menu">
+            {% macro render_tree(d) %}
+                {% for key, value in d.items() %}
+                    <li>
+                        {% if value is mapping %}
+                            <span class="folder">{{ key }}</span>
+                            <ul class="nested">
+                                {{ render_tree(value) }}
+                            </ul>
+                        {% else %}
+                            <a href="{{ url_for('calculation', semester_file=value) }}" class="file">{{ key.replace('.json','') }}</a>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            {% endmacro %}
+            {{ render_tree(menu) }}
+        </ul>
+
+        <script>
+            document.querySelectorAll('.folder').forEach(folder => {
+                folder.addEventListener('click', () => {
+                    const nested = folder.nextElementSibling;
+                    nested.classList.toggle('active');
+                });
+            });
+        </script>
+    </body>
+</html>

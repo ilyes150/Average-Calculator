@@ -1,0 +1,43 @@
+{
+  "system": "engineering",
+  "track": "common-core",
+  "year": 1,
+  "semester": 2,
+  "units": [
+    {
+      "code": "UEF 4.1",
+      "credit": 12,
+      "Coefficients": 8,
+      "subjects": [
+        { "name": "Data Structure and Algorithms 2", "coef": 4, "credit":  6, "Continuous": 0.4, "Exam": 0.6},
+        { "name": "computer architecture and organization", "coef": 4, "credit":  6, "Continuous": 0.4, "Exam": 0.6}
+      ]
+    },
+    {
+      "code": "UEF 4.2",
+      "credit": 12,
+      "Coefficients": 9,
+      "subjects": [
+        { "name": "Calculus 2", "coef": 3, "credit":  6, "Continuous": 0.4, "Exam": 0.6},
+        { "name": "Algebra 2", "coef": 3, "credit":  3, "Continuous": 0.4, "Exam": 0.6},
+        { "name": "Mathematical Logic", "coef": 3, "credit":  3, "Continuous": 0.4, "Exam": 0.6}
+      ]
+    },
+    {
+      "code": "UEM 4.1",
+      "credit": 4,
+      "Coefficients": 2,
+      "subjects": [
+        { "name": "Probability and Statistics 1", "coef": 2, "credit":  4, "Continuous": 0.4, "Exam": 0.6}
+      ]
+    },
+    {
+      "code": "UET 4.1",
+      "credit": 2,
+      "Coefficients": 1,
+      "subjects": [
+        { "name": "Oral Expression Techniques", "coef": 1, "credit":  2, "Exam": 1}
+      ]
+    }
+  ]
+}
