@@ -9,9 +9,9 @@
       "credit": 15,
       "Coefficients": 11,
       "subjects": [
-        { "name": "Data Structure and Algorithms 3", "coef": 4, "credit":  6, "Continuous": 0.4, "Exam": 0.6},
-        { "name": "Object-Oriented Programming 1", "coef": 4, "credit":  6, "Continuous": 0.4, "Exam": 0.6},
-        { "name": "Introduction to Information Systems", "coef": 3, "credit":  3, "Continuous": 0.4, "Exam": 0.6}
+        { "name": "Data Structure and Algorithms 3", "coef": 4, "credit":  6, "continuous": 0.4, "exam": 0.6},
+        { "name": "Object-Oriented Programming 1", "coef": 4, "credit":  6, "continuous": 0.4, "exam": 0.6},
+        { "name": "Introduction to Information Systems", "coef": 3, "credit":  3, "continuous": 0.4, "exam": 0.6}
       ]
     },
     {
@@ -19,8 +19,8 @@
       "credit": 9,
       "Coefficients": 6,
       "subjects": [
-        { "name": "Calculus 3", "coef": 3, "credit":  6, "Continuous": 0.4, "Exam": 0.6},
-        { "name": "Algebra 3", "coef": 3, "credit":  3, "Continuous": 0.4, "Exam": 0.6}
+        { "name": "Calculus 3", "coef": 3, "credit":  6, "continuous": 0.4, "exam": 0.6},
+        { "name": "Algebra 3", "coef": 3, "credit":  3, "continuous": 0.4, "exam": 0.6}
       ]
     },
     {
@@ -28,7 +28,7 @@
       "credit": 4,
       "Coefficients": 2,
       "subjects": [
-        { "name": "Probability and Statistics 2", "coef": 2, "credit":  4, "Continuous": 0.4, "Exam": 0.6}
+        { "name": "Probability and Statistics 2", "coef": 2, "credit":  4, "continuous": 0.4, "exam": 0.6}
       ]
     },
     {
@@ -36,7 +36,7 @@
       "credit": 2,
       "Coefficients": 1,
       "subjects": [
-        { "name": "Entrepreneurship", "coef": 1, "credit":  2, "Exam": 1}
+        { "name": "Entrepreneurship", "coef": 1, "credit":  2, "continuous": 0, "exam": 1}
       ]
     }
   ]

@@ -9,9 +9,9 @@
       "credit": 15,
       "Coefficients": 12,
       "subjects": [
-        { "name": "Data Structure and Algorithms 1", "coef": 5, "credit":  6, "Continuous": 0.4, "Exam": 0.6},
-        { "name": "Machine structure", "coef": 4, "credit":  5, "Continuous": 0.4, "Exam": 0.6},
-        { "name": "Introduction to Operating Systems 1", "coef": 3, "credit":  4, "Continuous": 0.6, "Exam": 0.4}
+        { "name": "Data Structure and Algorithms 1", "coef": 5, "credit":  6, "continuous": 0.4, "exam": 0.6},
+        { "name": "Machine structure", "coef": 4, "credit":  5, "continuous": 0.4, "exam": 0.6},
+        { "name": "Introduction to Operating Systems 1", "coef": 3, "credit":  4, "continuous": 0.6, "exam": 0.4}
       ]
     },
     {
@@ -19,8 +19,8 @@
       "credit": 9,
       "Coefficients": 6,
       "subjects": [
-        { "name": "Calculus 1", "coef": 3, "credit":  6, "Continuous": 0.4, "Exam": 0.6},
-        { "name": "Algebra 1", "coef": 3, "credit":  3, "Continuous": 0.4, "Exam": 0.6}
+        { "name": "Calculus 1", "coef": 3, "credit":  6, "continuous": 0.4, "exam": 0.6},
+        { "name": "Algebra 1", "coef": 3, "credit":  3, "continuous": 0.4, "exam": 0.6}
       ]
     },
     {
@@ -28,7 +28,7 @@
       "credit": 3,
       "Coefficients": 1,
       "subjects": [
-        { "name": "Fundamental electronics", "coef": 1, "credit":  3, "Exam": 1}
+        { "name": "Fundamental electronics", "coef": 1, "credit":  3, "exam": 1}
       ]
     },
     {
@@ -36,7 +36,7 @@
       "credit": 2,
       "Coefficients": 1,
       "subjects": [
-        { "name": "Written expression and office automation techniques", "coef": 1, "credit":  2, "Continuous": 0.5, "Exam": 0.5}
+        { "name": "Written expression and office automation techniques", "coef": 1, "credit":  2, "continuous": 0.5, "exam": 0.5}
       ]
     }
   ]
