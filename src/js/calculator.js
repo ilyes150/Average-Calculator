@@ -105,21 +105,28 @@ function calculateSemester() {
     if (!window.semesterData) return;
 
     let semesterWeightedSum = 0;
+    let semesterCoefSum = 0;
     let totalSemesterCredits = 0;
 
     window.semesterData.units.forEach((unit, uIndex) => {
         let ueSum = 0;
         let ueCoefSum = 0;
+        let ueCreditSum = 0;
 
         unit.subjects.forEach((sub, sIndex) => {
             const cont = Number(document.getElementById(`cont-${uIndex}-${sIndex}`)?.value) || 0;
             const exam = Number(document.getElementById(`exam-${uIndex}-${sIndex}`)?.value) || 0;
 
-            const finalNote = (sub.continuous ?? 0) * cont + (sub.exam ?? 0) * exam;
+            const wCont = sub.continuous ?? 0;
+            const wExam = sub.exam ?? 0;
+
+            const finalNote = wCont * cont + wExam * exam;
 
             document.getElementById(`moduleAvg-${uIndex}-${sIndex}`).innerText =
                 finalNote ? finalNote.toFixed(2) : "";
 
+            if (finalNote >= 10) ueCreditSum += sub.credit;      
+            semesterWeightedSum += finalNote * sub.coef;
             ueSum += finalNote * sub.coef;
             ueCoefSum += sub.coef;
         });
@@ -128,20 +135,23 @@ function calculateSemester() {
         document.getElementById(`ueAvg-${uIndex}`).innerText =
             ueAverage ? ueAverage.toFixed(2) : "";
 
-        const ueCredit = ueAverage >= 10 ? unit.credit : 0;
+        const ueCredit = ueAverage >= 10 ? unit.credit : ueCreditSum;
         document.getElementById(`ueCredit-${uIndex}`).innerText = ueCredit;
 
+        semesterCoefSum += ueCoefSum;
         if (ueAverage >= 10) {
-            semesterWeightedSum += ueAverage * unit.credit;
             totalSemesterCredits += unit.credit;
+        }
+        else {
+            totalSemesterCredits += ueCreditSum;
         }
     });
 
     const semesterAverage = totalSemesterCredits
-        ? semesterWeightedSum / totalSemesterCredits
+        ? semesterWeightedSum / semesterCoefSum
         : 0;
 
-    document.getElementById("Averege").innerText =
+    document.getElementById("Averege").innerText = 
         `Semester Average: ${semesterAverage.toFixed(2)}/20`;
     document.getElementById("Credit").innerText =
         `Semester Credit: ${totalSemesterCredits}`;
