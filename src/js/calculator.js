@@ -147,7 +147,7 @@ function calculateSemester() {
         }
     });
 
-    const semesterAverage = totalSemesterCredits
+    const semesterAverage = semesterWeightedSum
         ? semesterWeightedSum / semesterCoefSum
         : 0;
 
