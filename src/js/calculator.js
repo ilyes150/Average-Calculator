@@ -12,6 +12,7 @@ function generateTable(data, tableId = "semester-table") {
             <th>Continuous</th>
             <th>Exam</th>
             <th>Module Avg</th>
+            <th>Module Credit</th>
             <th>UE Avg</th>
             <th>UE Credit</th>
         </tr>
@@ -80,6 +81,10 @@ function generateTable(data, tableId = "semester-table") {
             moduleAvgCell.id = `moduleAvg-${uIndex}-${sIndex}`;
             row.appendChild(moduleAvgCell);
 
+            const moduleCreditCell = document.createElement("td");
+            moduleCreditCell.id = `moduleCredit-${uIndex}-${sIndex}`;
+            row.appendChild(moduleCreditCell);
+
             if (sIndex === 0) {
                 const ueAvgCell = document.createElement("td");
                 ueAvgCell.id = `ueAvg-${uIndex}`;
@@ -124,6 +129,11 @@ function calculateSemester() {
 
             document.getElementById(`moduleAvg-${uIndex}-${sIndex}`).innerText =
                 finalNote ? finalNote.toFixed(2) : "";
+
+            const moduleCreditCell = document.getElementById(`moduleCredit-${uIndex}-${sIndex}`);
+            if (moduleCreditCell) {
+                moduleCreditCell.innerText = finalNote >= 10 ? sub.credit : "";
+            }
 
             if (finalNote >= 10) ueCreditSum += sub.credit;      
             semesterWeightedSum += finalNote * sub.coef;

@@ -6,9 +6,10 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     </head>
     <body>
-        <h1>CS Average Calculator</h1>
-        <h2>Select your field:</h2>
-        <ul id="menu">
+        <div class="home-wrapper">
+            <h1 class="home-header-title">CS Average Calculator</h1>
+            <h2 class="home-header-subtitle">Select your field and semester.</h2>
+            <ul id="menu">
             {% macro render_tree(d) %}
                 {% for key, value in d.items() %}
                     <li>
@@ -24,13 +25,15 @@
                 {% endfor %}
             {% endmacro %}
             {{ render_tree(menu) }}
-        </ul>
+            </ul>
+        </div>
 
         <script>
             document.querySelectorAll('.folder').forEach(folder => {
                 folder.addEventListener('click', () => {
                     const nested = folder.nextElementSibling;
                     nested.classList.toggle('active');
+                    folder.classList.toggle('open');
                 });
             });
         </script>

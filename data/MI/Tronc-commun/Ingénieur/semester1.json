@@ -5,7 +5,7 @@
   "semester": 1,
   "units": [
     {
-      "code": "UEF 3.1",
+      "code": "UEF 1",
       "credit": 15,
       "Coefficients": 12,
       "subjects": [
@@ -15,7 +15,7 @@
       ]
     },
     {
-      "code": "UEF 3.2",
+      "code": "UEF 2",
       "credit": 9,
       "Coefficients": 6,
       "subjects": [
@@ -24,7 +24,7 @@
       ]
     },
     {
-      "code": "UEM 3.1",
+      "code": "UEM",
       "credit": 3,
       "Coefficients": 1,
       "subjects": [
@@ -32,7 +32,7 @@
       ]
     },
     {
-      "code": "UET 3.1",
+      "code": "UET",
       "credit": 2,
       "Coefficients": 1,
       "subjects": [
