@@ -2,10 +2,10 @@ from flask import Flask, render_template, jsonify
 import os
 import json
 
-# Initialize Flask with explicit folder paths
+# Ensure the static folder points to where your JS/CSS actually are
 app = Flask(__name__, template_folder="templates", static_folder="src")
 
-# Use absolute path for the data directory to prevent deployment issues
+# FIX: Define an absolute path for the data root
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_ROOT = os.path.join(BASE_DIR, "data")
 
@@ -30,7 +30,7 @@ def build_menu(data_root=DATA_ROOT):
             
             for f in files:
                 if f.endswith(".json"):
-                    # Store the relative path for use in URLs
+                    # Use forward slashes for URLs
                     current[f] = os.path.join(rel_path, f).replace(os.sep, '/')
     return menu
 
@@ -45,9 +45,13 @@ def calculation(semester_file):
 
 @app.route("/data/<path:semester_file>")
 def semester_data(semester_file):
-    # Construct absolute path to the JSON file
-    json_path = os.path.join(DATA_ROOT, semester_file)
+    # FIX: Use absolute path joining for deployment stability
+    json_path = os.path.normpath(os.path.join(DATA_ROOT, semester_file))
     
+    # Security check: Ensure the path is within DATA_ROOT
+    if not json_path.startswith(DATA_ROOT):
+        return jsonify({"error": "Unauthorized path"}), 403
+
     if os.path.exists(json_path):
         with open(json_path, encoding="utf-8") as f:
             data = json.load(f)
@@ -56,5 +60,4 @@ def semester_data(semester_file):
         return jsonify({"error": "Semester file not found"}), 404
 
 if __name__ == "__main__":
-    # Debug=True is only for local development
     app.run(debug=True)

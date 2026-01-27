@@ -2,6 +2,7 @@ let semesterData = null;
 
 function generateTable(data, tableId = "semester-table") {
     const table = document.getElementById(tableId);
+    if (!table) return; // Guard clause for deployment stability
 
     table.innerHTML = `
         <tr>
@@ -96,13 +97,11 @@ function generateTable(data, tableId = "semester-table") {
                 ueCreditCell.rowSpan = unit.subjects.length;
                 row.appendChild(ueCreditCell);
             }
-
             table.appendChild(row);
         });
     });
 
     window.semesterData = data;
-
     calculateSemester();
 }
 
@@ -124,15 +123,14 @@ function calculateSemester() {
 
             const wCont = sub.continuous ?? 0;
             const wExam = sub.exam ?? 0;
+            const finalNote = (wCont * cont) + (wExam * exam);
 
-            const finalNote = wCont * cont + wExam * exam;
-
-            document.getElementById(`moduleAvg-${uIndex}-${sIndex}`).innerText =
-                finalNote ? finalNote.toFixed(2) : "";
+            const avgCell = document.getElementById(`moduleAvg-${uIndex}-${sIndex}`);
+            if (avgCell) avgCell.innerText = finalNote.toFixed(2);
 
             const moduleCreditCell = document.getElementById(`moduleCredit-${uIndex}-${sIndex}`);
             if (moduleCreditCell) {
-                moduleCreditCell.innerText = finalNote >= 10 ? sub.credit : "";
+                moduleCreditCell.innerText = finalNote >= 10 ? sub.credit : "0";
             }
 
             if (finalNote >= 10) ueCreditSum += sub.credit;      
@@ -142,33 +140,30 @@ function calculateSemester() {
         });
 
         const ueAverage = ueCoefSum ? ueSum / ueCoefSum : 0;
-        document.getElementById(`ueAvg-${uIndex}`).innerText =
-            ueAverage ? ueAverage.toFixed(2) : "";
+        const ueAvgDisp = document.getElementById(`ueAvg-${uIndex}`);
+        if (ueAvgDisp) ueAvgDisp.innerText = ueAverage.toFixed(2);
 
         const ueCredit = ueAverage >= 10 ? unit.credit : ueCreditSum;
-        document.getElementById(`ueCredit-${uIndex}`).innerText = ueCredit;
+        const ueCreditDisp = document.getElementById(`ueCredit-${uIndex}`);
+        if (ueCreditDisp) ueCreditDisp.innerText = ueCredit;
 
         semesterCoefSum += ueCoefSum;
-        if (ueAverage >= 10) {
-            totalSemesterCredits += unit.credit;
-        }
-        else {
-            totalSemesterCredits += ueCreditSum;
-        }
+        totalSemesterCredits += (ueAverage >= 10) ? unit.credit : ueCreditSum;
     });
 
-    const semesterAverage = semesterWeightedSum
-        ? semesterWeightedSum / semesterCoefSum
-        : 0;
+    const semesterAverage = semesterCoefSum ? semesterWeightedSum / semesterCoefSum : 0;
 
-    document.getElementById("Averege").innerText = 
-        `Semester Average: ${semesterAverage.toFixed(2)}/20`;
-    document.getElementById("Credit").innerText =
-        `Semester Credit: ${totalSemesterCredits}`;
+    // Matching IDs from your calculation.html
+    document.getElementById("Averege").innerText = `Semester Average: ${semesterAverage.toFixed(2)}/20`;
+    document.getElementById("Credit").innerText = `Semester Credit: ${totalSemesterCredits}`;
 }
 
 function loadSemester(jsonFile, tableId = "semester-table") {
     fetch(jsonFile)
-        .then(res => res.json())
-        .then(data => generateTable(data, tableId));
+        .then(res => {
+            if (!res.ok) throw new Error("HTTP error " + res.status);
+            return res.json();
+        })
+        .then(data => generateTable(data, tableId))
+        .catch(err => console.error("Deployment Load Error:", err));
 }
