@@ -6,11 +6,11 @@
   "units": [
     {
       "code": "UEF 1",
-      "credit": 15,
+      "credit": 16,
       "Coefficients": 12,
       "subjects": [
         { "name": "Data Structure and Algorithms 1", "coef": 5, "credit":  6, "continuous": 0.4, "exam": 0.6},
-        { "name": "Machine structure", "coef": 4, "credit":  5, "continuous": 0.4, "exam": 0.6},
+        { "name": "Machine structure", "coef": 4, "credit":  6, "continuous": 0.4, "exam": 0.6},
         { "name": "Introduction to Operating Systems 1", "coef": 3, "credit":  4, "continuous": 0.6, "exam": 0.4}
       ]
     },

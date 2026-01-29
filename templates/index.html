@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur de Moyenne - Tronc Commun Informatique</title>
+    <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+    <!-- Back Button -->
+    <a href="#" onclick="location.reload()" class="back-button">
+        <span>🏠</span> Accueil
+    </a>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-content">
+                <div class="breadcrumb">
+                    <a href="#">Tronc Commun</a> / Calculateur de Moyenne
+                </div>
+                <h1 class="hero-title">Calculateur de Moyenne</h1>
+                <p class="hero-subtitle">Tronc Commun Ingénieur - Informatique</p>
+            </div>
+        </div>
+
+        <!-- Semester Selector -->
+        <div class="semester-selector">
+            <button class="semester-btn active" data-semester="semester1">
+                📘 Semestre 1
+            </button>
+            <button class="semester-btn active" data-semester="semester2">
+                📗 Semestre 2
+            </button>
+            <button class="semester-btn active" data-semester="semester3">
+                📙 Semestre 3
+            </button>
+            <button class="semester-btn active" data-semester="semester4">
+                📕 Semestre 4
+            </button>
+        </div>
+
+        <!-- Message Area -->
+        <div id="message"></div>
+
+        <!-- Calculator Table -->
+        <div class="table-card">
+            <table id="calculator-table" class="calculator-table">
+            </table>
+        </div>
+
+        <!-- Results Summary -->
+        <div class="results-summary">
+            <div class="result-box">
+                <span class="result-label">Moyenne du Semestre</span>
+                <span id="semester-avg-value" class="result-value na">—</span>
+            </div>
+            <div class="result-box">
+                <span class="result-label">Crédits Obtenus</span>
+                <span id="semester-credit-value" class="result-value na">—</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="/src/calculator.js"></script>
+</body>
+</html>
